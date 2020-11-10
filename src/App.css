@@ -1,0 +1,253 @@
+:root {
+  --header-bg: #f6f6f7;
+  --font-dark: #222222;
+  --font-light: #888888;
+  --required-star: #c90000;
+  --border-light: #cccccc;
+  --border-dark: #222222;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App p {
+  color: var(--font-light);
+}
+
+.App header {
+  background-color: var(--header-bg);
+  height: 4vh;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: small;
+  justify-content: space-between;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.container {
+  flex-grow: 1;
+  flex-flow: row wrap;
+  display: flex;
+}
+.image-container {
+  width: 100%;
+  align-content: center;
+}
+.image-container img {
+  padding: 1rem;
+  max-width: 80%;
+  height: auto;
+}
+
+/* Product detail styling */
+
+.product-detail {
+  width: 100%;
+  /* background-color: #c90000; */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail .title {
+  margin: 0;
+  padding: 1rem 1rem 0rem 1rem;
+  color: var(--font-dark);
+  font-weight: lighter;
+  text-align: left;
+}
+
+.product-detail .price {
+  margin: 0;
+  padding: 0rem 1rem 0rem 1rem;
+  color: var(--font-dark);
+  text-align: left;
+  font-weight: bold;
+}
+.product-detail .description {
+  width: 80%;
+  margin: 0;
+  padding: 0.5rem 0rem 0rem 1rem;
+  color: var(--font-light);
+  text-align: left;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+.divider {
+  margin-left: 1rem;
+  width: 80%;
+  color: var(--border-light);
+  background-color: var(--border-light);
+}
+
+.required {
+  color: var(--required-star);
+  padding-right: 0.5rem;
+}
+.bold-text {
+  font-weight: bold;
+  color: #000;
+}
+
+.product-detail .size {
+  display: inline;
+  text-align: left;
+  margin: 0;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  font-size: 0.9em;
+}
+
+/* Size selection stuff */
+
+.size-list {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: flex;
+  font-size: small;
+  align-items: center;
+
+  justify-content: flex-start;
+}
+
+.size-item {
+  border: 1px solid var(--border-light);
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  margin-right: 0.5rem;
+}
+
+.selected {
+  border: 2px solid var(--border-dark);
+}
+
+/* Buttons */
+
+.cart-button {
+  background-color: white;
+  border: 2px solid var(--border-dark);
+  color: var(--font-dark);
+  font-size: small;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: fit-content;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.cart-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.cart-button:hover {
+  background-color: var(--font-dark);
+  color: white;
+}
+
+/* Cart dropdown stuff */
+
+.cart-card {
+  position: absolute;
+  border: 1px solid var(--border-light);
+  background-color: white;
+  width: 90%;
+  top: 4em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mini-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.mini-item .title {
+  margin: 0;
+  padding: 1rem 1rem 0rem 1rem;
+  color: black;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.mini-item .price {
+  margin: 0;
+  color: var(--font-dark);
+  text-align: left;
+  font-weight: bold;
+}
+.mini-item .description {
+  width: 80%;
+  margin: 0;
+  padding: 0.5rem 0rem 0rem 1rem;
+  color: var(--font-light);
+  text-align: left;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+.mini-item img {
+  object-fit: contain;
+  width: 30%;
+}
+
+
+/* Responsive stuff */
+@media all and (min-width: 800px) {
+  .product-detail {
+    width: 50%;
+  }
+  .image-container {
+    width: 50%;
+  }
+  .image-container img {
+    max-width: 60%;
+  }
+  .cart-card {
+    width: 30%;
+    left: 100%;
+    transform: translateX(-105%);
+
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
